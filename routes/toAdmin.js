@@ -4,7 +4,7 @@ var mysql = require('mysql');
 var app = express();
 var toAdmin = express.Router();
 
-
+//db접근을 위한 정보
 var conn = mysql.createConnection({
     host:'localhost',
     user:'root',    // dbUser
@@ -19,9 +19,11 @@ var conn = mysql.createConnection({
     database : 'studyroomdb',  // dbDatabase
     port: 3306
 });*/
+// '/admin'으로 direct됐을때의 동작
 toAdmin.get('/', (req, res) => {
   res.render('admin');
 });
+// '/admin'에서 '/roomManage'로 제출동작이 일어났을때
 toAdmin.post('/roomManage', (req, res) => {
   var r_date = req.body.roomdate;
   var st = req.body.usingtime.substring(0,2)
