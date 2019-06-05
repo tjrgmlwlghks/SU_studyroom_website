@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var ejs = require('ejs');
 
-var app = express(); 
+var app = express();  
 
 //모듈가져오기 세션과 쿠키
 var cookieParser = require('cookie-parser');
